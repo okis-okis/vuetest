@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eagle</title>
+    <link rel="stylesheet" href="styles/theme.css" />
+  </head>
+  <body id="app">
+    <div class="page">
+      <header class="header">
+        <div class="header__body">
+          <a href="#" class="logo">
+            <img src="images/eagle.png" alt="" />
+          </a>
+
+          <div
+            class="header__burger"
+            :class="[burgerState?'active':'']"
+            ref="header__burger"
+            @click="burgerState = !burgerState"
+          >
+            <span></span>
+          </div>
+
+          <nav ref="header__menu" class="header__menu" ref="'header__burger'">
+            <ul class="header__list">
+              <li>
+                <a href="" class="header__link">Главная</a>
+              </li>
+              <li>
+                <a href="" class="header__link">Пункт 1</a>
+              </li>
+              <li>
+                <a href="" class="header__link">Пункт 2</a>
+              </li>
+              <li>
+                <a href="" class="header__link">Пункт 3</a>
+              </li>
+              <li>
+                <a href="" class="header__link">Пункт 4</a>
+              </li>
+              <li>
+                <a href="" class="header__link">Пункт 5</a>
+              </li>
+              <li>
+                <a href="" class="header__link">Пункт 6</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="content">
+        <div class="enterImage">
+          <div class="enterImage__image">
+            <img ref="mainImage" :src="eaglePhoto[indexPhoto]" alt="" />
+          </div>
+
+          <div class="switchPanel">
+            <ul class="switchPanel__list">
+              <li
+                v-for="(item, index) in eaglePhoto"
+                @click="indexPhoto = index"
+                class="item"
+              ></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="aboutBlock">
+          <div class="limit">
+            <div class="about">
+              <div class="about__title">About us</div>
+              <div class="about__content">
+                <div class="about__image">
+                  <img src="images/nature.png" alt="" />
+                </div>
+                <div class="about__text">
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Illum veritatis molestias exercitationem dolorum, beatae
+                    quam iure, repudiandae, maiores vitae quia quidem recusandae
+                    esse placeat tempore nemo. Tenetur sunt repellat eius?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__content">
+          <div class="card__item">
+            <div class="card__image">
+              <img src="images/phone.png" alt="" />
+            </div>
+            <div class="card__title">Telephone</div>
+            <div class="card__text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
+              aspernatur! Perferendis enim aut, exercitationem nostrum magnam
+              voluptatum veritatis modi nam at consequatur illum eum ad!
+            </div>
+          </div>
+
+          <div class="card__item">
+            <div class="card__image">
+              <img src="images/gps.jpg" alt="" />
+            </div>
+            <div class="card__title">GPS</div>
+            <div class="card__text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
+              aspernatur! Perferendis enim aut, exercitationem nostrum magnam
+              voluptatum veritatis modi nam at consequatur illum eum ad!
+            </div>
+          </div>
+
+          <div class="card__item">
+            <div class="card__image">
+              <img src="images/eye.png" alt="" />
+            </div>
+            <div class="card__title">eye</div>
+            <div class="card__text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
+              aspernatur! Perferendis enim aut, exercitationem nostrum magnam
+              voluptatum veritatis modi nam at consequatur illum eum ad!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map">
+        <div class="map__title">map to us</div>
+
+        <div class="map__map">
+          <div class="mapouter">
+            <iframe
+              width="100%"
+              height="500"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?ll=28.5449756,77.1904397&q=Indian Institute of Technology Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="limit">
+          <div class="footer__text">FOOTER</div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script/script.js"></script>
+  </body>
+</html>
